@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ColaboradorAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PostAPIController;
@@ -21,4 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //Route::resource('posts', 'API\PostAPIController');
 Route::resource('posts',  PostAPIController::class);
+Route::resource('colaborador',  ColaboradorAPIController::class);
+Route::post('colaborador/associaChefe', 'App\Http\Controllers\API\ColaboradorAPIController@associaChefe');
+
 
